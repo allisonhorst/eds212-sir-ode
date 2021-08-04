@@ -29,9 +29,9 @@ times      <- seq(0, 100, by = 0.5)
 
 ```{r}
 ## Build the function with all 
-sir <- function(time, state, parameters) {
+sir <- function(time, init, parameters) {
 
-  with(as.list(c(state, parameters)), {
+  with(as.list(c(init, parameters)), {
 
     dS <- -beta * S * I
     dI <-  beta * S * I - gamma * I

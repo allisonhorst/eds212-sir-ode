@@ -185,9 +185,9 @@ times      &lt;- seq(0, 100, by = 0.5)</code></pre>
 <div id="create-the-function-with-the-differential-equations" class="section level2">
 <h2>Create the function with the differential equations:</h2>
 <pre class="r"><code>## Build the function with all 
-sir &lt;- function(time, state, parameters) {
+sir &lt;- function(time, init, parameters) {
 
-  with(as.list(c(state, parameters)), {
+  with(as.list(c(init, parameters)), {
 
     dS &lt;- -beta * S * I
     dI &lt;-  beta * S * I - gamma * I
